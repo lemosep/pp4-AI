@@ -9,8 +9,6 @@ data = pd.read_csv("./data/restaurantev2.csv", sep=';');
 class_att = data.iloc[:, 1:11].values;
 table = data.iloc[:, 0:11]; # full table
 
-print(class_att);
-
 # -- preprocessing categorical attributes -- #
 
 # Starting with LabelEnconder() for binary attributes (sim & nao).
@@ -22,3 +20,6 @@ class_att[:,2] = label_encoder.fit_transform(class_att[:,2]); #SexSab
 class_att[:,3] = label_encoder.fit_transform(class_att[:,3]); #fome
 class_att[:,6] = label_encoder.fit_transform(class_att[:,6]); #Chuva
 class_att[:,7] = label_encoder.fit_transform(class_att[:,7]); #Res
+
+
+print(class_att);
