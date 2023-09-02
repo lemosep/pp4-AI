@@ -4,14 +4,14 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.compose import ColumnTransformer
 from sklearn.model_selection import train_test_split
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.metrics import accuracy_score, confusion_matrix, classification_report 
+from sklearn.tree import DecisionTreeClassifier, plot_tree
+from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
 from yellowbrick.classifier import ConfusionMatrix
 from sklearn import tree
 import matplotlib.pyplot as plt
 
 # load data from .csv file
-dataframe = pd.read_csv("./data/restaurantev2.csv", sep=';');
+dataframe = pd.read_csv("/content/restaurantev2.csv", sep=';');
 
 #setting attributes and classification resuls
 attributes = dataframe.iloc[:,1:11].values;
@@ -39,7 +39,7 @@ attributes = hotEncodeAtt.fit_transform(attributes);
 
 print(attributes)
 
-#Split dataset into trainig and testing 
+#Split dataset into trainig and testing
 att_train, att_test, result_train, result_test = train_test_split(attributes, classification, test_size = 0.20, random_state= 23);
 
 #Implementing Decision Tree Algo (entropy-based)
@@ -64,5 +64,7 @@ print(b);
 #classification report
 print(classification_report(result_test, predicts));
 
-plt.show(tree.plot_tree(training));
+plt.figure(figsize=(12, 8))
+plot_tree(model, feature_names=None, class_names=None, filled=True, rounded=True)
+plt.show()
 
