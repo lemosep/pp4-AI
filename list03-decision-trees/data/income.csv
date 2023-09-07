@@ -1,0 +1,15 @@
+historia-credito;divida;garantias;renda-anual;risco
+ruim;alta;nenhuma;<1500;alto
+desconhecida;alta;nenhuma;>=1500<=3500;alto
+desconhecida;baixa;nenhuma;>=1500<=3500;moderado
+desconhecida;baixa;nenhuma;>3500;alto
+desconhecida;baixa;nenhuma;>3500;baixo
+desconhecida;baixa;adequada;>3500;baixo
+ruim;baixa;nenhuma;<1500;alto
+ruim;baixa;adequada;>3500;moderado
+boa;baixa;nenhuma;>3500;baixo
+boa;alta;adequada;>3500;baixo
+boa;alta;nenhuma;<1500;alto
+boa;alta;nenhuma;>=1500<=3500;moderado
+boa;alta;nenhuma;>3500;baixo
+ruim;alta;nenhuma;>=1500<=3500;alto
